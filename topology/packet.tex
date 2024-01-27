@@ -1,0 +1,64 @@
+\documentclass{article}
+\author{Saahil Sharma}
+\title{Topology Packet}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\begin{document}
+\begin{abstract}
+        Topology Packet Answers. 
+\end{abstract}
+\section{The definition of Topology}
+\begin{itemize}
+\item Exercise 1.2 \\
+         a) $\tau = \{V \subset \mathbb{Z} \mid 0 \in V \}.$ \\ 
+            This is not a topology on $\mathbb{Z}$ because all sets must contain $0$, therefore the empty set will not be included and $\tau$ is not a valid topology. 
+       \\  b) $\tau = \{V \subseteq \mathbb{Z} \mid 0 \in V \}.$ \\
+            This is a topology on $\mathbb{Z}$.   
+       \\   c) $\tau = \{ V \subset \mathbb{Z} \mid 0 \in V \text{and} 1 \in V \}$. \\ 
+            This is not a topology on $\mathbb{Z}$ becuase all sets must contain $0$ and $1$, therefore the empty set will not             be included and $\tau$ is not a valid topology. 
+
+
+        d)$\tau = \{ V \subset \mathbb{Z} \mid 0 \in V \text{and} 1 \in V \}$.  \\ 
+           This is  a topology on $\mathbb{Z}$ because the empty set will be included because  the elements $0$ and $1$ do not have to be in every open set.              
+
+        e)$\tau = \{ V \subset \mathbb{Z} \mid V \text{ is finite. } \}$.  \\ 
+          This is not a topology on $\mathbb{Z}$ becuase the total set will not be included, becuase $\mathbb{Z}$ is not an finite set.  
+        f) $\tau = \{ V \subset \mathbb{Z} \mid V \text{ is infinite. } \}$. \\   
+          This is not a topology on $\mathbb{Z}$ becuase the empty set will not be included.
+
+
+        We can further generalize this by saying that all topologies on $\mathbb{Z}$ that require a certain element to exist cannot be topologies becuase they lack the existence of the empty set. 
+        We can also say that all topologies $\tau$ that require a certain element does not exist within all sets of $\tau$ is considered a valid topology. 
+       \\ 
+        We can also say that if all sets within the topology $\tau$ must be infinite or finite, these will not be considered valid topologies.         
+\\
+\item Exercise 1.3 
+ \\       Among the following, which ones are topologies on the set $\mathbb{R}$ and which ones are not? \\
+        a)$\tau = \{(a, \infty) \mid a \in \mathbb{R}\} \cup \{\phi, \mathbb{R}\}$. \\
+        
+        b)$\tau = \{[a, \infty) \mid a \in \mathbb{R}\} \cup \{\phi, \mathbb{R}\}$. \\ 
+        Both of these are valid topologies on $\mathbb{R}$ as they include the total set and the empty set. The only differce is that one topology contains $a$ and the other one does not. u
+\item Exercise 1.4 \\
+    Let $X$ be any set. 
+        \begin{itemize}
+            \item     a) What is the topology on $X$ that has the most open sets? This is called the disceret topology on $X$. 
+                \\ Answer: 
+                    \\ The topology with the most amount of open sets on $X$ will include the total set, the empty set, and every subset, and the powet set $\mathbb{X}$ that includes all the subsets of $X$. \\
+            \item    b) What is the topology on $X$ that has the least open sets? This is called the indiscete topology on $X$. 
+                \\ Answer:
+                    \\ The topology with the least amount of open sets would only contain the total set and the empty set. 
+            \end{itemize}
+                
+\item Exercise 1.5 Let $X$ be an arbitrary set. Which ones of the following are topologies?
+        \begin{itemize}
+            \item   a) The \textit{cofinite} topology: A set $V \subseteq X$ is open iff $[ X \backslash  V \text{ is finite or } V = \phi$.
+                    This topology can be defined on all sets $X$ because first it includes $/phi$. Now we must prove this condition accounts for the total set. If $V$ is empty, then $X \backslash V$ will be the total set, therefore this topology exists. 
+            \item   b) The \textit{coinifnite} topology: A set $V \subseteq X$ is open iff $[X \backslash V \text{ is infinite or } V = \phi \text{ or } V = X$. 
+                
+            \item   c) The \textit{cocountable} topology: A set $V \subseteq X$ is open iff $[X \backslash V \text{ is countable or  } V = \phi \text{or} V = X$.   
+                             
+        \end{itemize}
+\end{itemize}
+
+\end{document}

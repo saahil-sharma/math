@@ -1,0 +1,184 @@
+\documentclass[a4paper]{report}
+\title{Notes for Topology: Munkres}
+\author{Saahil Sharma}
+\usepackage{amssymb}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\begin{document}
+\begin{titlingpage}
+\maketitle
+\begin{abstract}
+	Welcome! This document will be used to create notes on Topology for the first 3 chapters of Munkres. Problems and exercises will be completed in a different document. All notes will be written by Saahil Sharma. Text Editor being used is Nvim with WSL 2022. Notes are first dated at 12/12/2023. Thank you.  
+\end{abstract}
+\end{titlingpage}
+\section{Chapter 1}
+
+\begin{itemize}
+
+\item Notation
+
+	If an object $\textit{a}$ belongs to a set $\textit{A}$, we denote this by writing 
+		$$\textit{a}\in \textit{A}$$.
+	If the converse is true - The element $\textit{a}$ does not belong to a set $\textit{A}$, we denote this by writing 
+		$$\textit{a}\notin \textit{A}$$.
+	We say that $\textit{A}$ is a subset of $\textit{B}$ if all of the elements of $\textit{A}$ are also in $\textit{B}$, denoted by writing
+		$$\textit{A}\subset\textit{B}$$.
+	If $\textit{A}$ is not the same as $\textit{B}$, we call  $\textit{A}$ a proper subset of $\textit{B}$, denoted with 
+		$$\textit{A}\subseteq\textit{B}$$.
+	These relations are called inclusion and proper inclusion, respectively. It can be read as "$B$ contains $A$". 
+ 
+	How can one specify a set?
+
+	If a set is short, one can simply list the elements of the set:
+		$$\textit{A} = \{a, b, c \}. $$
+\item Set Builder Notation:
+
+If a set is too long, or possibly infintely long, we can use set builder notation to list the items within the set. To define the set $B$ using set builder notation, we denote $B$ as 
+		$$ \textit{B} = \{ x \mid \text{x is an even integer }\}. $$ 
+In this example, $B$ would be the set of all even integers. 
+
+The union of two sets is defined as 
+		$$ \textit{A}\cup\textit{B} = \{x \mid x \in A \text{or} x \in B\}. $$
+The intersection of two sets in defined as 
+		$$ \textit{A}\cap\textit{B} = \{x \mid x \in A \text{and} x \in B\}. $$
+What if $A$ and $B$ have no elements in common? To denote this set, we use the empty set, which is written as 
+		$$ \varnothing = \{ \}. $$
+This fact can also be expressed by saying $A$ and $B$ are \textit{\textbf{disjoint}}.
+		
+\item 
+	The Difference of 2 Sets
+
+	Think about this as litterally subtracting out the terms that exist in $A$ and $B$. To define this with rigor, we can write
+			$$A - B = \{\, x \mid x \in A \text{ and } x \notin B \,\}.$$
+	This can sometimes be called the \textit{\textbf{complement}} of $B$ relative to $A$.
+\item Rules of Set Theory
+	\begin{itemize}
+		\item 1
+			$$A\cap \left( B \cup C \right) = \left( A \cap B \right) \cup \left( A \cap C \right) $$
+			This sort of resembles the distributive property. 
+		\item 2 
+			$$A\cup \left( B \cap C \right) = \left( A \cup B \right) \cap \left( A \cup C \right) $$
+			This also shares a resemblence to the distrubitive property. 
+		\item 3	$$A - \left( B \cup C \right) = \left( A - B \right) \cap \left( A - C \right) $$
+ 
+		\item 4 $$A - \left( B \cap C \right) = \left( A - B \right) \cup \left( A - C \right) $$
+			An efficient way to memorize this:
+			\begin{itemize}
+				\item 1 \textit{The complement of the union equals the intersection of the complements.}
+				\item 2 \textit{The complement of the intersection equals the union of the complements.} 
+			\end{itemize}
+	\end{itemize}
+
+\item Sets
+	
+	A set can consist of anything, from other numbers to sets themselves. You can have a set of of all the subsets in a set:
+			$$ A = \{\, A \mid A \text{ is a subset of } B \,\}.$$
+		This is sometimes called the power set of $B$, denoted as $\mathcal{B}$.
+	A set whose elements are set is commonly referred to as a collection of sets. 
+	
+		We now make a distinction in notation. To illustrate, if $A$ is the set $\{1, 2, 3\}$, then the following are all equivalent. 
+		$$a \in A,     \{a\} \subset A, \text{and} \{a\} \in  \mathcal{P}(A). $$
+	Given a collection of sets $\mathcal{A}$, the \textbf{union} of $\mathcal{A}$ is defined by the equation 
+		 \[
+			 \bigcup_{x \in \mathcal{A}} A = \{\, x \mid x \in A\text{ for at least one } A \in \mathcal{A} \,\}.
+		 \]
+	The intersection of the elements a is defined by the equation 
+		\[
+			 \bigcap_{x \in \mathcal{A}} A = \{\, x \mid x \in A\text{ for every } A \in \mathcal{A} \,\}.
+		\]
+	This intersection is not defined when $\mathcal{A}$ is empty.
+
+\item Cartesian Products
+	Given sets $A$ and $B$, we can define their cartesian product to be 
+	\[
+		A \times B = \{ (a, b) \mid a \in A  \text{ and }  b \in B \}
+	\]
+	The cartesian product is the set of all ordered pairs, $(a, b)$, such that $a$ is an element of $A$ and $b$ is an element of $B$.
+
+\item Rule of Assignment
+
+	A Rule of Assignment $r$ is of $C \times D$ is a rule of assignment if 
+		\[
+			[(c, d) \in r \text{ and } (c, d') \in r] \Longrightarrow [d = d'].
+		\]
+	We think of $r$ as a way of assigning, to the element $c$ of $C$, the element $d$ of $D$, for which (c, d) $\in$ $r$. 
+
+		Given a rule of assignment $r$, the \textit{\textbf{domain}} of $r$ is defined to be the subset of $C$ consisting of all the first coordinates of elements of $r$, and the \textbf{image set} of $r$ is defined as the subset of $D$ consisting of all second coordinates of elements of $r$. Formally, 
+		\[
+			\text{domain } r = \{c \mid \text{ there exists } d \in D \text{ such that } (c, d) \in r \}, 
+			 \text{image } r = \{d \mid \text{ there exists } c \in C \text{ such that } (c, d) \in r \}.
+		\]
+\item Function
+	A function $f$is a rule of assignment $r$, together with a set $B$, that contains the image set of $r$. The domain $A$ of the rule $r$ is also called the domain of the function $f$; the image set of $r$ is also called the \textbf{image set} of $f$; and the set $B$ is called the \textbf{range} of $f$. 
+
+	If $f$ is a function having domain $A$ and range $B$, we express this fact by writing 
+	\[
+		f: A \Longrightarrow B,
+	\]
+	which is read "$f$ is a function from $A$ to $B$, or "$f$ is a mapping from $A$ into $B$," or simply "$f$ maps $A$ into $B$." One sometimes visualizes $f$ as a geometric transformation phsyically carrying the points of $A$ to points of $B$. 
+
+	If $f: A \Longrightarrow B$ and if $a$ is an element of $A$, we denote by $f(a)$ the unique element of $B$ that the rule determining $f$ assigns to $a$; it is called the $textbf{value}$ of $f$ at $a$, or sometimes the \textbf{image} of $a$ under $f$. Formally, if $r$ is the rule of the function $f$, then $f(a)$ denotes the unique element of $B$ such that $(a, f(a)) \in r$. 
+		Using this notation, one can go back to defining functions almost as one did before, with no lack of rigor. For instance, one can write (letting $\mathbb{R}$ denote the real numbers)
+		\[
+			\text{"Let } f \text{be the function whose rule is } \{(x, x^3 + 1) \mid x \in \mathbb{R} \text{ and whose range is } \mathbb{R}\text{",}
+		\]
+	or one can equally write
+		\[ 
+			\text{"Let } f : \mathbb{R} \Rightarrow \mathbb{R} \text{be the function such that } f(x) = x^3 + 1\text{."}
+		\]
+	The sentence let $f$ be the function $f(x) = x^3 +1$ is no longer adequate for specifying a function becuase it neither specifies the domain or range of $f$. 
+	
+\item Restriction
+		IF $f : A \Rightarrow B$ and if $A_{0}$ is a subset of A, we define the restriction of $f$ to $A_{0}$ to be the function mapping $A_{0}$ into $B$ whose rule is 
+		\[
+			\{(a, f(a)) \mid a \in A_{0}\}. 
+		\]
+	It is denoted by $f/mid A_{0}$, which is read $"f \text{ restricted to } A_{0}$. 
+	
+\item Composite Functions
+		Given functions $f : A \longrightarrow B$ and $g: B \longrightarrow C$, we define the \textbf{composite} $g \circ f$ of $f$ and $g$ as the function $g \circ f : A \longrightarrow C $ defined by the equation $(g \circ f)(a) = g(f(a))$. 
+		Formally, $g \circ f : A \longrightarrow C$ is the function whose rule is
+		\[
+			\{(a, c) \mid \text{For some } b \in B, f(a) = b and g(b) = c\}. 
+		\]
+		In your mind, you can picture this as the point $a$ moving to the point $f(a)$, and then to the point $g(f(a))$. 
+		Note that $g \circ f$ is only defined when the range of $f$ \textit{equals} the domain of $g$. 
+
+\item Bijective, Injective, and Surjective
+	A function $f: A \longrightarrow B$ is said to be \textbf{injective} (or one to one) if for each pair of distinct points of $A$, their images under $f$ are distinct. It is said to be \textbf{surjective} (or $f$ is said to map $ A \textbf{onto} B$) if every element of $B$ is the image of some element of $A$ under the function $f$. IF $f$ is both injective and surjective, it is said to be \textbf{bijective} (or is called a \textbf{one to one correspondence}). 
+		More formally, $f$ is injective if
+		$$
+			[f(a) = f(a')] \Longrightarrow [a = a'], 
+		$$ 
+		and $f$ is surjective if 
+		$$ 
+			[b \in B] \Longrightarrow [b = f(a) \text{ for at least one } a \in A]. 
+		$$ 
+	Injectivity of $f$ depends only on the rule of $f$; surjectivity depends on the range of $f$ as well. You can check that the composite of two injective functions is injective, and the composite of two sujective functions is surjective; it follows that the composite of two bijective functions is bijective. 
+	
+	If $f$ is bijective, there exists a function from $B$ to $A$ called the \textbf{inverse} of $f$. IT is denoted by $f^-1$, and is the standard inverse of $f$ as you have learned. IF $f$ is surjective, this implies there exists such an element in the domain that yeilds an inverse relationship, and if $f$ is injective then there is \textit{only one} such element that exists. 
+
+	Lemma 2.1. Let $f: A \longrightarrow B$. If there are functions $g: B \longrightarrow A$ and $h: B \longrightarrow A$ such that $g(f(a)) = a$ for every $a$ in $A$ and $f(h(b)) = b$ for every $b$ in $B$, then $f$ is bijective and $g = h = f^-{1}$. 
+
+\item Image
+	Let $f: A \longrightarrow B$. If $A_{0}$ is a subset of $A$, we denote by $f(A_{0})$ the set of all images of points of $A_{0}$ under the function $f$; this set is called the \textbf{image} of $A_{0}$ under $f$. Formally, 
+	\[
+		f(A_{0}) = \{ b \mid b = f(a) \text{ for at least one } a \in A_{0}\}. 
+	\]
+
+	On the other hand, if $B_{0}$ is a subset of $B$, we denote by $f^{-1}(B_{0})$ the set of all elements of $A$ whose images under $f$ lie in $B_{0}$; it is called the \textbf{preimage} of $B_{0}$ under $f$, also called the "counterimage" or the "inverse image". Formally, 
+	\[
+		f^{-1}(B_{0}) = \{a \mid f(a) \in B_{0}\}. 
+	\]
+
+	
+\end{itemize}
+
+	
+
+
+
+\end{document}

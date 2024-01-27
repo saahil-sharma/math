@@ -1,0 +1,93 @@
+\documentclass{report}
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+\title{\Huge{Topology Packet}\\Alfonso Gracia-Saz}
+\author{\huge{Saahil Sharma}}
+\usepackage[english]{babel}
+\date{}
+\begin{document}
+\maketitle
+\protect\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+\chapter{The Definition of Topology}
+\section{Definition 1.1}
+\dfn{Topology}{Let $X$ be a set. A \textit{topology} on $X$ is a family of $\tau$ subsets of $X$ which satisfies three properties. We will say that a subset of $X$ is an open set iff it is an element of $\tau$. The three properties are:
+    \begin{itemize}
+        \item The total set and the empty set are open sets. 
+
+        \item The intersection of any $2$ open sets is an open set. 
+
+        \item The union of any $2$ open sets is an open set. 
+    \end{itemize}
+}  
+A topological space is a pair $(X, \tau)$ where $X$ is a set and $\tau$ is a topology on $X$. 
+\section{Exercise 1.2}
+\qs{Exercise 1.2}{Among the following, some are topologies on the set $\mathbb{Z}$ and some are not. Which ones are? If an example is not a topology, but you can modify it slightly to make it into a topology, do so. If an example is a topology, and you can generalize it into more examples, do so.}
+
+\qs{Exercise 1.2.a}{\[\tau = \{V \subseteq \mathbb{Z} \mid 0 \in V \} \text{ In other words, a set is open iff it contains } 0.\} \]}   
+\sol This is not a topology on $\mathbb{Z}$ because all sets must contain the element $0$, therefore the empty set will not be included and $\tau$ is not a valid topology. 
+\qs{Exercise 1.2.b}{\[\tau = \{V \subseteq \mathbb{Z} \mid 0 \in V\} \text{ In other words, a set is open iff it does not contain } 0. \] }
+\sol This is a topology on $\mathbb{Z}$ because it contains the empty set and the total set.  
+ 
+
+\qs{Exercise 1.2.c}{\[\tau = \{V \subseteq \mathbb{Z} \mid 0 \in V \text{ and } 1 \in V \}\]}. 
+\sol This is not a topology because if $0$ and $1$ are in every open set, the empty set will not be an open set.
+
+\qs{Exercise 1.2.d}{\[\tau = \{ V \subseteq \mathbb{Z} \mid 0 \in V \text{or} 1 \in V \}\].}
+\sol This is a topology on $\mathbb{Z}$ because the empty set will be included because the elements $0$ and $1$ do not have to be in every open set.
+\qs{Exercise 1.2.e}{\[\tau = \{ V \subseteq \mathbb{Z} \mid V \text{ is finite}\}\]}.
+\sol This is not a topology on $\mathbb{Z}$ as it requires that all sets inside must be finite and the total set is infinite.                                                         
+\protect\qs{Exercise 1.2.f}{\[\tau = \{ V \subseteq \mathbb{Z} \mid V \text{ is infinite }\}\]}.
+\protect\sol This is not a topology on $\mathbb{Z}$ because the empty set will not be included.
+\nt{We can further generalize this by saying that all topologies on $\mathbb{Z}$ that require a certain element to exist cannot be topologies because they lack the existence of the empty set. Continuing on, one can also say that all topologies $\tau$ that require a certain element does not exist within all sets of $\tau$ is considered a valid topology. Furthermore, one can also say that if all sets within the topology $\tau$ must be infinite or finite, these will not be considered valid topologies.         
+}
+\section{Exercise 1.3}
+\qs{1.3}{Among the following, which ones are topologies on the set $\mathbb{R}$ and which ones are not?}
+
+\qs{1.3.a}{\[\tau = \{(a, \infty) \mid a \in \mathbb{R}\} \cup \{\phi, \mathbb{R}\}\]}
+
+\sol We can prove this topology is not valid by a proof of contradiction. Consider the claim to be true. Then, the union of $2$ open sets must also be an open set. Consider the $2$ sets where the first set has a starting value of $a$ and the second set has a starting value of $b$. Consider $a < b$. In this situation, the union of these $2$ sets will contain all values from $a$ to $\infty$, not inclusive. This set will not include $b$ though, therefore there is a missing value between $a$ and $\infty$ and the union of these two sets cannot be an open sets. This satisfies that (a) cannot be a valid topology. 
+
+\qs{1.3.b}{\[\tau = \{[a, \infty) \mid a \in \mathbb{R}\} \cup \{\phi, \mathbb{R}\}\].} 
+
+\sol We can prove this topology is valid by satisfying all $3$ axioms that define a topological space. The first axiom is automatically satisfied as the set is in union with the total set and the empty set. Continuing on, the union of $2$ sets must also be an empty set. This can be proved by considering $2$ sets, one with an $a$ value of $a$ and another with an $a$ value of $b$. If $a = b$, then their union is itself and the resulting set is open. Continuing on, if $a < b$, then the set will include all values from $a$ to $\infty$, including $b$, therefore this set would also be an open set. The same logic can be applied to the situation in which $b < a$, and for the $3$rd axiom, regarding intersections of $2$ sets. 
+\section{Exercise 1.4}
+
+Let $X$ be any set. 
+\qs{1.4.a}{What is the topology on $X$ that has the most open sets? This is called the \textit{discrete} topology on $X$.} 
+\sol The topology with the most amount of open sets on $X$ will include the total set, the empty set, and every subset, and the power set $\mathbb{X}$ that includes all the subsets of $X$. 
+\qs{1.4.b}{What is the topology on $X$ that has the least open sets? This is called the \textit{indiscrete} topology on $X$.}
+\sol The topology with the least amount of open sets would only contain the total set, the empty set, and the union of those $2$ sets.  
+
+\section{Exercise 1.5}
+Let $X$ be an arbitrary set. Which ones of the following are topologies?
+
+\qs{1.5.a}{The \textit{cofinite} topology: A set $V \subseteq X$ is open iff $[ X \backslash  V \text{ is finite or } V = \phi]$.}
+\sol We must prove this topology $\tau$ is in order with the $3$ defining points of a topology on $X$. 
+
+\clm{}{\[\text{Both } \phi \text{ and } X \text{ are in } \tau \].}
+    It is known that $\phi$ is in $\tau$ by the definition of $\tau$. The total set is also in this topology because if $V$ is $X$, then $X \backslash X$ is finite, therefore $X$ is also in this topology. 
+The union of $2$ open sets in $\tau$ is also an open set.
+\clm{}{The union of $2$ open sets in $\tau$ must also be an open set.}
+    If a set $V$ is in $\tau$, then by definition $V$ is finite. The union between any $2$ finite sets is also finite, therefore the union of all sets in $\tau$ is also an open set. 
+\clm{}{The intersection of an open set of $\tau$ is also an open set.} 
+    If a set $V$ is in $\tau$, then by definition $V$ is finite. The intersection between any $2$ finite sets must either be finite or $\phi$, therefore the intersection between any $2$ sets in $\tau$ is also an open set. 
+
+\qs{1.5.b}{The \textit{coinfinite} topology: A set $V \subseteq X$ is open iff \[[X \backslash V \text{ is infinite or } V = \phi \text{ or } V = X\].} 
+\sol The first defining term of the definition of a topology is satisfied by the definition of $\tau$, saying that both $X$ and$\phi$ exist within $\tau$.
+Now, if we have two sets in $\tau$ being $V_i$ and $V_j$, then $X - (V_i \cup V_j)$ must also be infinite. This is from the second axiom of a topology. From De Morgan's Laws, we know that
+
+                    \[
+                        X - ( V_i \cup V_j ) = (X - V_i) \cap (X - V_j).                  
+                    \]
+This indicates the intersection of $2$ infinite sets, which can be either infinite, finite or empty. Therefore, there exists a counterexample and the \textit{coinfinite} topology does not exist for all sets $X$. 
+
+\qs{1.5.c}{The \textit{cocountable} topology: A set $V \subseteq X$ is open iff \[ [X \backslash V \text{ is countable or  } V = \phi.\]} 
+\sol To prove this, we must prove that the topology $\tau$ exists only for countable sets. That is, we have already proved when $X$ is finite in the first case. Let $K_i$ be equal to $X \backslash V_i$. Therefore, $\tau$ is equal to the collection of sets $V_i$, $V_j$, $\dots$. Therefore, we must prove that the union of $V_i$ and $V_j$ is also an open set. To do this, we use De Morgan's laws.
+                    \[X - (V_i \cup V_j) = (X-V_i) \cap (X-V_j) \Longrightarrow  \]
+                    \[X - (V_i \cup V_j) = (K_i) \cap (K_j) \].
+By definition, both $K_i$ and $K_j$ are countable, therefore their union is countable. The same logic and be applied to the $3$rd axiom of a topology, proving that $\tau$ is a valid topology. A very nice question!                            
+
+\end{document}
