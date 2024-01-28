@@ -56,13 +56,13 @@ Let $X$ be any set.
 \sol The topology with the most amount of open sets on $X$ will include the total set, the empty set, and every subset, and the power set $\mathbb{X}$ that includes all the subsets of $X$. 
 \qs{1.4.b}{What is the topology on $X$ that has the least open sets? This is called the \textit{indiscrete} topology on $X$.}
 \sol The topology with the least amount of open sets would only contain the total set, the empty set, and the union of those $2$ sets.  
-
+\newpage
 \section{Exercise 1.5}
 \begin{center}
 Let $X$ be an arbitrary set. Which ones of the following are topologies?
 \end{center}
 
-\qs{1.5.a}{The \textit{cofinite} topology: A set $V \subseteq X$ is open iff $[ X \backslash  V \text{ is finite or } V = \phi]$.}
+\qs{1.5.a}{The \textit{cofinite} topology: A set \[V \subseteq X \text{ is open iff } [ X \backslash  V \text{ is finite or } V = \phi]\].}
 \sol We must prove this topology $\tau$ is in order with the $3$ defining points of a topology on $X$. 
 Now, if we have two sets in $\tau$ being $V_i$ and $V_j$, then $X - (V_i \cup V_j)$ must also be infinite. This is from the second axiom of a topology. From De Morgan's Laws, we know that
                     \[
@@ -70,11 +70,26 @@ Now, if we have two sets in $\tau$ being $V_i$ and $V_j$, then $X - (V_i \cup V_
                     \]
 This indicates the intersection of $2$ infinite sets, which can be either infinite, finite or empty. Therefore, there exists a counterexample and the \textit{coinfinite} topology does not exist for all sets $X$. 
 
-\qs{1.5.c}{The \textit{cocountable} topology: A set $V \subseteq X$ is open iff \[ [X \backslash V \text{ is countable or  } V = \phi.\]} 
+\qs{1.5.c}{The \textit{cocountable} topology: A set $V \subseteq X$ is open iff \[ [X \backslash V \text{ is countable or  } V = \phi]\].} 
 \sol To prove this, we must prove that the topology $\tau$ exists only for countable sets. That is, we have already proved when $X$ is finite in the first case. Let $K_i$ be equal to $X \backslash V_i$. Therefore, $\tau$ is equal to the collection of sets $V_i$, $V_j$, $\dots$. Therefore, we must prove that the union of $V_i$ and $V_j$ is also an open set. To do this, we use De Morgan's laws.
                     \[X - (V_i \cup V_j) = (X-V_i) \cap (X-V_j) \Longrightarrow  \]
                     \[X - (V_i \cup V_j) = (K_i) \cap (K_j) \].
 By definition, both $K_i$ and $K_j$ are countable, therefore their union is countable. The same logic and be applied to the $3$rd axiom of a topology, proving that $\tau$ is a valid topology. A very nice question!                            
+
+\section{Exercise 1.6}
+\begin{center}
+    Let $(X, \tau)$ be a topological space. Prove each of the following statements true or false.         
+\end{center}
+    
+\qs{1.6.a}{The intersection of any $3$ sets is open.}
+\sol Let $A$, $B$, and $C$ be open sets. By the definition of a topology, $A \cup B$ is open. Name this set $D$. By the definition of topology, $D \cup C$ is also an open set, therefore the intersection of $3$ open sets is also an open set. 
+
+\qs{1.6.b}{The intersection of finitely many sets is open.}
+\sol Consider $x$ sets, $X_a$, $X_b$, $\dots$, $X_z$ such that each of these sets are in $\tau$. Using the answer to the question above, the intersection of these sets will be an open set, until you reach the $x^{th}$ set. 
+
+\qs{1.6.c}{The intersections of open sets is open.}
+\sol Consider infinite sets. The intersection of infinite open sets does not neccesarily have to be open. If $X$ is $\mathbb{R}$, then an open set in $\tau$ is an interval, $(a, b)$. If the intersection of these infinite amount of open sets is a single point, ${c}$, then this would not be considered an open set. 
+
 
 \end{document}
 
