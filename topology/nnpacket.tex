@@ -5,6 +5,7 @@
 \input{letterfonts}
 \title{\Huge{Topology Packet}\\Alfonso Gracia - Saz}
 \author{\huge{Saahil Sharma}}
+\usepackage{tikz}
 \date{}
 \begin{document}
 
@@ -20,7 +21,7 @@
 Among the following, some are topologies on the set $\mathbb{Z}$ and some are not. Which ones are? If an example is not a topology, but you can modify it slightly to make it into a topology, do so. If an example is a topology, and you can generalize it into more examples, do so.  
 \end{center}
 \qs{Exercise 1.2.a}{\[\tau = \{V \subseteq \mathbb{Z} \mid 0 \in V \} \text{ In other words, a set is open iff it contains } 0.\} \]}
-\sol This is not a topology on $\mathbb{Z}$ because all sets must contain the element $0$, therefore the empty set will not be included and $\tau$ is not a valid topology. 
+\sol This is not a topology on $\mathbb{Z}$ because $\tau$ must contain $\varphi$, and $\varphi$ does not contain zero.
 
 \qs{Exercise 1.2.b}{\[\tau = \{V \subseteq \mathbb{Z} \mid 0 \notin V \} \text{ In other words, a set is open iff it does not contain } 0.\} \]}
 \sol This is not a valid topology on $X$, because if $0$ is not included, the total set will not be an open set, therefore $\tau$ is not valid.  
@@ -92,6 +93,94 @@ By definition, both $K_i$ and $K_j$ are countable, therefore their union is coun
 \section{Exercise 1.8}
 \qs{1.8}{Describe geometrically what a ball is in $\mathbb{R}$, $\mathbb{R}^2$, and $\mathbb{R}^3$.}
 \sol In $\mathbb{R}$, a ball is an open interval. In $\mathbb{R}^2$, a ball is a circle of radius $y$ that excludes all the points lying on the outside of the circle. In $\mathbb{R}^3$, a ball is a sphere that does not include the outermost layer of points on the sphere. 
+
+\section{Exercise 1.9}
+\dfn{}{Let $x \in \mathbb{R}^N$ and let $\epsilon > 0$. The \textit{ball} centered at $x$ with radius $\epsilon$ is
+    \[
+        B_{\epsilon}(x) := {y \in \mathbb{R}^N \mid d(x, y) < \epsilon},
+    \]
+    where $d(x, y)$ is the Euclidean distance between the points $x$ and $y$. 
+}
+
+
+\qs{1.10}{
+    \begin{center}
+        Prove that the topology in Definition 1.9 is actually a topology.
+    \end{center}
+}
+\sol To prove this, we must show that the standard topology satisfied the $3$ axioms of the definition of a topology. First, the empty set exists in this topology. If there are no $x$ in $\varphi$, then there is no condition that can checked and $\varphi$ is in $\tau$. An open set $V$ is defined to be a proper subset or subset of $\mathbb{R}^N$, therefore the total set can be included in $\tau$. Now, we must prove that the intersection and union of two open sets is also an open set. Consider the following two lines. 
+
+
+INSERT DRAWING HERE
+
+
+For every element $x$ in an open set $V$, there exists a ball centered at $x$ with radius $\epsilon > 0$. Call the two open sets $U$, and $V$. Define their union as $A$. There exists a set $A$ in $\tau$ such that the ball centered at some $x$ with radius $\epsilon > 0$ contains the endpoints that set $U$ and $V$ touch. Therefore, $U \cup V$ will an open set. This same logic applies to the intersection of two sets, claiming that there exists a set $A$ such that $A$ touches the first point of intersection to the second point of intersection of sets $U$ and $V$. 
+
+
+\section{Example 11}
+\begin{center} 
+    Show which one of the following examples are open according to Definition 1.9. 
+\end{center}
+
+\qs{1.11.a}{The set ${1}$ in $\mathbb{R}$.}
+\sol There exists no ball centered at $1$ with raidus $\epsilon < 0$ such that this ball is a subset of ${1}$, therefore this set is not an open set in the standard topology on $\mathbb{R}$. 
+
+\qs{1.11.b}{The interval $(2, 5)$ in $\mathbb{R}$.}
+\sol There exists a ball centered at $3$ with radius $\epsilon = 1.5$, therefore this set is an open set in the standard topology on $\mathbb{R}$.  
+
+\qs{1.11.c}{The ball $B_{\epsilon}(x)$ in $\mathbb{R}^N$ for any $x \in \mathbb{R}^N$ and any $\epsilon > 0$.}
+\sol This set is an open set, because for all $x$ in this open set $V$, there exists a ball centered at this $x$ that can have a $\epsilon > 0$. This is because this open set will be an interval from $x -  \epsilon$ to $x + \epsilon$, therefore there will always a ball for points between these endpoints centered at $x$ with radius $\mid x - \epsilon \mid$. 
+
+\qs{1.11.d}{The interval $[0, 1)$ in $\mathbb{R}$.}
+\sol There exists no ball that is centered at $x = 1$ for this open set, because if $\epsilon > 0$ then the range of this ball will stretch past $1$, which is outside the interval of the set. There exists no ball $B_{\epsilon > )}(1)$, therefore this set cannot be open.  
+
+\qs{1.11.e}{The set $\{(x, y) \in \mathbb{R}^2 \mid x > y\} \text{ in } \mathbb{R}^2$.}
+\sol This is not an open set in $\mathbb{R}^2$ because visually, a ball in $\mathbb{R}^2$ visually is a set containing all points in a circle, except those lying on the circumference of the circle. If the $x$ value is greater than the $y$ value for all $(x, y)$ in the circle, then it is not possible for there to be a ball centered at the point with the utmost $x$ value, becuase this point will house a ball (circle) that extends outside of the open set's range. 
+
+\section{Exercise 1.12}
+
+\qs{1.12}{Find all the topologies on the set $X = \{0, 1, 2\}$.}
+\sol
+\begin{itemize}
+  \item $(X, \tau) = \{\phi, X\}$
+  \item $(X, \tau) = \{\phi, X, \{0\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 1\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0\}, \{1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0\}, \{0, 1\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0\}, \{0, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0\}, \{1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 1\}, \{1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 1\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 1\}, \{0, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 2\}, \{1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0\}, \{1, 2\}\}$
+  \item $(X, \tau) = \{\phi, X, \{0, 1\}, \{0, 2\}, \{1, 2\}\}$
+\end{itemize}
+
+
+\section{Fuzzy 1.13}
+
+\textbf{Fuzzy 1.13} Look back at your answer to Exercise $1.12$. Some of those topologies are very similar. One could even say that they are practically "the same topology" with different names. Come up with a definition of what \textit{practically the same topology} could mean. Also, come up with a better name. With this definition, how many essentially different topologies are there on $\{0, 1, 2\}$?
+
+
+
+\sol Each topology on $X$ contains $X$ by definition. Excluding this property, each topology contains from $0$ to $7$ different subsets of $X$, and we call classify the topologies of $X$ based on the amount of subsets existing in $\tau$ excluding $X$ and $\phi$. We can call this topology an \textit{n-topology}, where $n$ represents the amount of subsets in each topology of $X$. 
+
+
+
+         This would mean there are 
+\begin{center}
+    \begin{itemize}
+         \item 3 1-topologies
+         \item 11 2-topologies
+         \item 1 3-topology
+    \end{itemize}
+\end{center}
 
 \end{document}
 
