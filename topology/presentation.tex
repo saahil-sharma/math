@@ -1,0 +1,205 @@
+\documentclass[9pt]{beamer}
+\usetheme{Frankfurt}
+\usepackage{asymptote}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage[outline]{contour}
+\newcommand*{\fullchili}{\textcolor{red}{\faPepperHot}}
+\newcommand*{\emptychili}{\textcolor{white}{\contour{red}{\faPepperHot}}}
+\usepackage{setspace}
+\setstretch{1.15}
+
+\makeatletter
+\renewrobustcmd{\beamer@@pause}[1][]{%
+  \unless\ifmeasuring@%
+  \ifblank{#1}%
+    {\stepcounter{beamerpauses}}%
+    {\setcounter{beamerpauses}{#1}}%
+  \onslide<\value{beamerpauses}->\relax%
+  \fi%
+}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+\frametitle{What is a set? ~ \emptychili \emptychili \emptychili \emptychili}
+    \bigskip
+    A \textbf{set} $X$ is a collection of items. 
+    A set $X$ can be used to define a group of numbers, such as the set $\mathbb{R}$ of all real numbers. 
+    
+    Let's look at some examples of a \textbf{set}. 
+
+    What do the following sets represent? 
+    \begin{itemize} 
+        \item $\mathbb{Q}$
+
+       \item $\mathbb{Z}$
+
+        \item $\mathbb{N}$
+    \end{itemize}
+\end{frame}
+    
+\begin{frame}
+\frametitle{Set Examples  ~ \emptychili \emptychili \emptychili \emptychili}
+    \bigskip
+    A \textbf{set} $X$ is a collection of items. \bigskip
+    A set $X$ can be used to define a group of numbers, such as the set $\mathbb{R}$ of all real numbers. 
+    \bigskip
+    Lets look at some examples of a \textbf{set}. 
+
+    What do the following sets represent? 
+    \begin{itemize} 
+        \item $\mathbb{Q}$: The set of rational numbers. 
+       
+        \item $\mathbb{Z}$: 
+
+        \item $\mathbb{N}$:
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Set Examples  ~ \emptychili \emptychili \emptychili \emptychili}
+    \bigskip
+    A \textbf{set} $X$ is a collection of items. \bigskip
+    A set $X$ can be used to define a group of numbers, such as the set $\mathbb{R}$ of all real numbers. 
+    \bigskip
+    Lets look at some examples of a \textbf{set}. 
+
+    What do the following sets represent? 
+    \begin{itemize} 
+        \item $\mathbb{Q}$: The set of rational numbers. 
+       
+        \item $\mathbb{Z}$: The set of all integers. 
+
+        \item $\mathbb{N}$:
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Set Examples  ~ \emptychili \emptychili \emptychili \emptychili}
+    \bigskip
+    A \textbf{set} $X$ is a collection of items. \bigskip
+    A set $X$ can be used to define a group of numbers, such as the set $\mathbb{R}$ of all real numbers. 
+    \bigskip
+    Lets look at some examples of a \textbf{set}. 
+
+    What do the following sets represent? 
+    \begin{itemize} 
+        \item $\mathbb{Q}$: The set of rational numbers. 
+       
+        \item $\mathbb{Z}$: The set of all integers. 
+
+        \item $\mathbb{N}$: The set of all natural numbers. 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Subsets ~ \emptychili \emptychili \emptychili \emptychili}
+    \bigskip
+    A \textbf{subset} $V$ is a set such that all elements are contained in another set. \bigskip
+    \medskip 
+    A subset $C$ of $V$ can be written as $C \subset V$. This can read as $V$ contains $C$.
+
+    What are some example subsets of the following sets?
+    \medskip
+        \begin{itemize} 
+        \item $\mathbb{R}$: The set of all real numbers. 
+
+        \item $\mathbb{Q}$: The set of rational numbers. 
+       
+        \item $\mathbb{Z}$: The set of all integers. 
+
+        \item $\mathbb{N}$: The set of all natural numbers.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Topology  ~ \emptychili \emptychili \emptychili \emptychili}
+    \bigskip
+    A \textbf{subset} $V$ is a set such that all elements are contained in another set. \bigskip
+
+    \bigskip 
+    A subset $C$ of $V$ can be written as $C \subset V$. This can read as $V$ contains $C$.
+
+    What are some example subsets of the following sets?
+    \bigskip
+    \begin{itemize} 
+        \item $\mathbb{R}$: The set of all real numbers. 
+
+        \item $\mathbb{Q}$: The set of rational numbers. 
+
+        \item $\mathbb{Z}$: The set of all integers. 
+
+        \item $\mathbb{N}$: The set of all natural numbers.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Set Builder Notation ~ \fullchili \fullchili \emptychili \emptychili}
+    Set builder notation is a notation that can be used to describe sets neatly and quickly. 
+    Set builder notation generally follows the following conventions. 
+    \[
+        V = \{\text{ element } \mid \text{ condition } \} 
+    \] 
+    Some textbooks may use a colon $:$ instead of the bar, $\mid$. Essentially, this reads the set $V$ contains all elements such that the condition is satisfied. Set builder notation is very useful for describing sets such that all terms satisfy a condition or pattern. 
+   
+    Let's do some examples. 
+\end{frame}
+\begin{frame}
+    \frametitle{Set Builder Notation Examples ~ \fullchili \fullchili \fullchili \emptychili}
+    
+    Turn and talk to a partner about the following sets. 
+
+    What do these sets mean?
+
+    \begin{itemize}
+        \item $X = \{x \mid x = 2n - 1 \}$, $n \in \mathbb{N}$ 
+
+        \item $X = \{x \mid x = 2n \}$, $n \in \mathbb{N}$ 
+
+        Consider $X$ to be a arbitrary set. Define $V$ to be a subset of $X$.  
+        
+    \item $ V = $
+    \end{itemize}
+    
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Topology ~ \emptychili \emptychili \emptychili \emptychili}
+    A topology $\tau$ on a set $X$ is a group of subsets of $X$ that satisfy $3$ conditions. A subset that satisfies these conditions is called \alert{\textit{open}}. Consider the sets $U$ and $V$. 
+    \begin{itemize}
+        \item The total set $X$ and the empty set $\emptyset$ must be open sets. 
+            
+        \item The union of two open sets must be an open set. For example, $U \cup V$ must be an open set. 
+
+        \item The intersection of two open sets must be an open set. For example, $U \cap V$ must be an open set. 
+    \end{itemize}
+    
+    A topological space is a pair $(X, \tau)$ where $X$ is a set and $\tau$ is a topology on $X$.  
+\end{frame}
+
+\begin{frame}
+    \frametitle{Some Exercises ~ \emptychili \emptychili \emptychili \emptychili}
+    Let $(X, \tau)$ be a topological space. Prove each of the following statements \textit{true} or \textit{false}.  
+    \begin{itemize}
+       \item The intersection of any $3$ open sets is an open set. 
+
+        \item The intersection of finitely many open sets is open.
+
+        \item The intersection of open sets is open. 
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
+
+
+
+
+

@@ -5,7 +5,6 @@
 \input{letterfonts}
 \title{\Huge{Topology Packet}\\Alfonso Gracia - Saz}
 \author{\huge{Saahil Sharma}}
-\usepackage{tikz}
 \date{}
 \begin{document}
 
@@ -50,10 +49,10 @@ Among the following, some are topologies on the set $\mathbb{Z}$ and some are no
     Among the following, which ones are topologies on the set $\mathbb{R}$ and which ones are not?
 \end{center}
 
-\qs{1.3.a}{\[\tau = \{(a, \infty) \mid a \in \mathbb{R}\} \cup \{\phi, \mathbb{R}\}\]}
+\qs{1.3.a}{\[\tau = \{(a, \infty) \mid a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}\]}
 \bigskip
 \sol We can prove this topology is not valid by a proof of contradiction. Consider the claim to be true. Then, the union of $2$ open sets must also be an open set. Consider the $2$ sets where the first set has a starting value of $a$ and the second set has a starting value of $b$. Consider $a < b$. In this situation, the union of these $2$ sets will contain all values from $a$ to $\infty$, not inclusive. This set will not include $b$ though, therefore there is a missing value between $a$ and $\infty$ and the union of these two sets cannot be an open sets. This satisfies that (a) cannot be a valid topology. 
-\qs{1.3.b}{\[\tau = \{[a, \infty) \mid a \in \mathbb{R}\} \cup \{\phi, \mathbb{R}\}\].} 
+\qs{1.3.b}{\[\tau = \{[a, \infty) \mid a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}\].} 
 \bigskip
 \sol We can prove this topology is valid by satisfying all $3$ axioms that define a topological space. The first axiom is automatically satisfied as the set is in union with the total set and the empty set. Continuing on, the union of $2$ sets must also be an empty set. This can be proved by considering $2$ sets, one with an $a$ value of $a$ and another with an $a$ value of $b$. If $a = b$, then their union is itself and the resulting set is open. Continuing on, if $a < b$, then the set will include all values from $a$ to $\infty$, including $b$, therefore this set would also be an open set. The same logic can be applied to the situation in which $b < a$, and for the $3$rd axiom, regarding intersections of $2$ sets. 
 
@@ -202,7 +201,7 @@ For every element $x$ in an open set $V$, there exists a ball centered at $x$ wi
   \item $(X, \tau) = \{\phi, X, \{0, 2\}\}$
   \item $(X, \tau) = \{\phi, X, \{1, 2\}\}$
   \item $(X, \tau) = \{\phi, X, \{0\}, \{1, 2\}\}$
-  \item $(X, \tau) = \{\phi, X, \{0, 1\}, \{0, 2\}, \{1, 2\}\}$
+  \item $(X, \tau) = \{\emptyset, X, \{0, 1\}, \{0, 2\}, \{1, 2\}\}$
 \end{itemize}
 
 \medskip
@@ -228,6 +227,29 @@ For every element $x$ in an open set $V$, there exists a ball centered at $x$ wi
     \end{itemize}
 \end{center}
 \medskip
+
+\chapter{2 Sequences and Limits}
+\medskip
+\begin{center}
+   This chapter deals with limits and accumulation points of sequences in any topological space.  
+\end{center}
+\medskip
+
+\dfn{2.1}{Let $X$ be a set. A \textit{sequence} in $X$ is a \textit{map} $x: \mathbb{N} \rightarrow X$. Consider $0 \in \mathbb{N}$. As notation, $x_n$ refers to an element in $X$. We may also write $(x_n)$ to refer to the whole sequence.}
+
+\dfn{2.2}{Let $P(n)$ be a statement that depends on a natural number $n \in \mathbb{N}$. We say that "$P(n)$ is eventually true for all $n$" if there exists $n_o \in \mathbb{N}$ such that $P(n)$ is true for all $n \geq n_o$. If there is no abiguity, we will say simply that "$P(n)$ is eventually true".}
+
+\dfn{2.3}{Let $(X, \tau)$ be a topological space. Let $(x_n)$ be a sequence in $X$. Let $a \in X$. We say that $a$ is a \textit{limit} of the sequence when the following statement is true: "If $V \subseteq X$ is an open set such that $a \in V$, then $x_n \in V$ eventually for all $n$." In this case we say that the sequence \textit{converges} to $a$. In words, this means that every open set containing $a$ has to contain all the sequence, except for the first few terms. We say a sequence is \textit{convergent} if it has at least one limit.}
+
+\qs{Exercise 2.4}{Consider the sequence $0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6 \dots$ on the set $X = \mathbb{R}$ For each of the following topologies, find all of its limits.}
+
+\begin{enumerate}
+    \item the discrete topology
+        \sol 
+    \item the indiscrete topology
+        \sol
+\end{enumerate}
+
 
 \end{document}
 

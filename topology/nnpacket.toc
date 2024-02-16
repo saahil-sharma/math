@@ -10,4 +10,5 @@
 \contentsline {section}{\numberline {1.9}Example 11}{5}{section.1.9}%
 \contentsline {section}{\numberline {1.10}Exercise 1.12}{6}{section.1.10}%
 \contentsline {section}{\numberline {1.11}Fuzzy 1.13}{7}{section.1.11}%
+\contentsline {chapter}{\numberline {2}2 Sequences and Limits}{8}{chapter.2}%
 \contentsfinish 
